@@ -1,21 +1,17 @@
 <?php
     session_start();
     require_once('db.class.php');
-    $user = $_POST['username'];
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $password = md5($_POST['password']);
-
-    // FILTROS
-    // ////////////////////////////
 
     // Linkar ao db
     $db = new db;
     $link = $db->connect_mysql();
-    $sql = "SELECT * FROM student WHERE cnpf = '$user' AND password = '$password'";
+    $sql = "SELECT * FROM student WHERE email = '$email' AND password = '$password'";
     
     $resultId = mysqli_query($link, $sql);
     // Consultar
     if($resultId) {
-        
         $userData = mysqli_fetch_array($resultId);
         // Validar acesso
         if(isset($userData['username'])) {

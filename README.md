@@ -1,1 +1,1 @@
-# Nosso projeto é o Youbi
+# This code has the base of the php registration logic

@@ -4,6 +4,6 @@
 
     unset($_SESSION['name']);
 
-    // header('Location:')
+    header('Location: index.php')
 
 ?>

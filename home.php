@@ -10,7 +10,7 @@
 
     </head>
     <body>
-        <h1>Usuário autenticado<br></h1>
-        <?= $_SESSION['name']?>
+        <h1>Bem vindo <?=$_SESSION['name']?></h1>
+        <a href="sair.php"><button>Sair</button></a>
     </body>
 </html>

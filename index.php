@@ -12,18 +12,19 @@
                 echo 'Faça o login novamente';
             }
         ?>
-        <a href="quero-ser-parceira.php">quero ser empresa parceira</a>
-        <a href="quero-ser-aluno.php">quero ser aluno</a>
-        <form method="post" action="valida-aluno.php" id="loginStudent">
-            <input type="text" name="username">
-            <input type="password" name="password">
+        <form method="post" action="valida-user.php" >
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Insira seu email"><br><br>
+            <label for="password">Senha</label>
+            <input type="password" name="password" placeholder="Insira seu email"><br><br>
             <input type="submit">
-            <?php
-                if($erro == 1) {
-                    echo 'Usuário ou senha inválido';
-                }
-            ?>
         </form>
+        <?php
+            if($erro == 1) {
+                echo 'Usuário ou senha inválido';
+            }
+        ?>
+        <a href="cadastro.php">Cadastre-se</a>
 
     </body>
 </html>
